@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="loginform">
+      <div><input name="password" /></div>
+      <button>Login</button>
+    </form>
+  </body>
+
+  <script>
+    const form = document.getElementById("loginform");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      fetch("https://insight-backend.onrender.com/api/admin2/login", {
+        method: "POST",
+        body: JSON.stringify({ password: formData.get("password") }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res) => {
+        console.log(res);
+        if (res.status == 400) {
+          alert("Invalid password");
+        }
+        res.json().then((response) => {
+          const { token } = response;
+          localStorage.setItem("token", token);
+          window.location.href="/admin.html"
+        });
+      });
+    });
+  </script>
+</html>

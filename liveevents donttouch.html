@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Event Table</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <style>
+    @font-face {
+    font-family: ethno;
+    src: url(ethno.ttf);
+    }
+
+    body {
+      padding-top: 60px;
+      background-color: #f7f8fa;
+    }
+
+    .navbar {
+      background-color: #000000;
+    }
+
+    .navbar-brand {
+      color: rgb(255, 255, 255);
+    }
+
+    .table-container {
+      margin-top: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .table-header {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+
+    .table-row {
+      transition: background-color 0.3s;
+    }
+    #header .logo h1 {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: ethno;
+    /* src: url(../fonts/ethnocentric_regular.ttf); */
+    
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="index.html" style="font-family: ethno;">insight'24</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home
+            <!-- <span class="sr-only">(current)</span> -->
+          </a>
+        </li>
+        <li><a class="nav-link scrollto " href="index.html#updates">Updates</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="container mt-5 table-container">
+    <h2 class="text-center py-3">Live Events</h2>
+    <table class="table table-bordered">
+      <thead class="table-header">
+        <tr>
+          <th class="text-center">Event Name</th>
+        </tr>
+      </thead>
+      <tbody id="eventTableBody">
+        <!-- Table rows will be dynamically added here using JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- JavaScript code to fetch JSON data and populate the table -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Replace 'your-data.json' with the actual path to your JSON file
+      fetch('https://insight-backend.onrender.com/api/liveevent')
+        .then(response => response.json())
+        .then(data => {
+          // Get the tbody element to append table rows
+          const tableBody = document.getElementById('eventTableBody');
+
+          // Loop through the data and create table rows
+          data.forEach(event => {
+            const row = document.createElement('tr');
+            row.classList.add('table-row');
+            row.style.backgroundColor = event.color; // Set the background color
+
+            const cell = document.createElement('td');
+            cell.classList.add('text-center');
+            cell.textContent = event.eventname;
+
+            row.appendChild(cell);
+            tableBody.appendChild(row);
+
+            // Add hover effect
+            row.addEventListener('mouseover', () => {
+              row.style.backgroundColor = lightenDarkenColor(event.color, 20);
+            });
+
+            row.addEventListener('mouseout', () => {
+              row.style.backgroundColor = event.color;
+            });
+          });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    });
+
+    // Function to lighten or darken a color
+    function lightenDarkenColor(col, amt) {
+      var usePound = false;
+      if (col[0] === "#") {
+        col = col.slice(1);
+        usePound = true;
+      }
+      var num = parseInt(col, 16);
+      var r = (num >> 16) + amt;
+      if (r > 255) r = 255;
+      else if (r < 0) r = 0;
+      var b = ((num >> 8) & 0x00FF) + amt;
+      if (b > 255) b = 255;
+      else if (b < 0) b = 0;
+      var g = (num & 0x0000FF) + amt;
+      if (g > 255) g = 255;
+      else if (g < 0) g = 0;
+      return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+    }
+  </script>
+
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+  
+
+</body>
+</html>

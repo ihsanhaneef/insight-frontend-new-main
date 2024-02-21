@@ -1,0 +1,1643 @@
+<!-- admintable.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Table</title>
+    
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+  
+      /* Header styles */
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+      }
+  
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        color: black;
+      }
+  
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+        color: black;
+      }
+  
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        color: black;
+      }
+  
+      /* Main content styles */
+      main {
+        padding: 20px;
+      }
+  
+      section {
+        margin-bottom: 40px;
+      }
+  
+      h2 {
+        margin-bottom: 10px;
+        background-color: black;
+        font-size: x-large;
+        color: white;
+        padding: 20px;
+      }
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+  
+      th, td {
+        padding: 8px;
+        border: 1px solid #ddd;
+        
+      }
+  
+      th {
+        background-color: #ccd3eb;
+      }
+      tr{
+        text-align: center;
+      }
+      button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  /* margin: auto;
+    display: block; */
+  
+}
+
+button:hover {
+  background-color: #74b978;
+}
+
+button:active {
+  background-color: red;
+}
+input {
+  background-color: #26ceb2; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+#topButton {
+  display: block; /* Hide the button by default */
+  position: fixed; /* Fixed position to keep it in the viewport */
+  bottom: 30px; /* Adjust the distance from the bottom */
+  right: 30px; /* Adjust the distance from the right */
+  z-index: 99; /* Ensure it appears above other elements */
+  background-color: #008CBA; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 10%; /* Make it a circle */
+  padding: 15px; /* Adjust padding */
+  font-size: 16px; /* Adjust font size */
+  cursor: pointer; /* Change cursor to pointer */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+  transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+#topButton:hover {
+  background-color: #005f79; /* Button color on hover */
+}
+
+
+
+    </style>
+  </head>
+  <body>
+  <!-- ======= Header ======= -->
+  <head id="header">
+    
+
+        <nav id="navbar" class="navbar" style="margin: 20px;">
+            <ul>
+                <li><button id="logout" style="background-color: red;">Logout</button></li>
+                <li><a class="nav-link scrollto active" href="#download">download</a></li>
+                <li><a class="nav-link scrollto active" href="#live">liveevent</a></li>
+                <li><a class="nav-link scrollto" href="#Announcement">Announcement</a></li>
+                <li><a class="nav-link scrollto" href="#scoreboard">scoreboard</a></li>
+                <li><a class="nav-link scrollto " href="#replica">replica</a></li>
+                <li><a class="nav-link scrollto " href="#technova">technova</a></li>
+                <li><a class="nav-link scrollto " href="#langame">langame</a></li>
+                <li><a class="nav-link scrollto" href="#cultural">cultural</a></li>
+                <li><a class="nav-link scrollto" href="#debate">debate</a></li>
+                <li><a class="nav-link scrollto " href="#debugging">debugging</a></li>
+                <li><a class="nav-link scrollto " href="#quiz">quiz</a></li>
+                <li><a class="nav-link scrollto " href="#ppt">ppt</a></li>
+                <li><a class="nav-link scrollto" href="#treasure">treasure</a></li>
+                <li><a class="nav-link scrollto " href="#seminar">seminar</a></li>
+                <li><a class="nav-link scrollto " href="#photography">photography</a></li>
+                <li><a class="nav-link scrollto " href="#videography">videography</a></li>
+            </ul>
+           
+        </nav>
+  
+  </head>
+  <main>
+  <section id="download" style="background-color: #ffffff; margin: -20px;align-items: center; justify-content: center;">
+                  <!-- all download button -->
+                  <h1 style="text-align: center; font-size: xx-large; font-family: Georgia, 'Times New Roman', Times, serif;"><b>Insight 24 Admin Panel</b></h1>
+  <div style="background-color: #000000;"><h2 style="padding: 20px; color: rgb(255, 255, 255); text-align: center;">REGISTRATION DATA</h2></div>
+    <button id="downloadReplica">download replica data</button>
+    <button id="downloadTechnova">download Technova data</button>
+    <button id="downloadLangame">download langame data</button>
+    <button id="downloadCultural">download Cultural data</button>
+    <button id="downloadDebate">download Debate data</button>
+    <button id="downloadSeminar">download Seminar data</button>
+    <button id="downloadPpt">download Ppt data</button>
+    <button id="downloadQuiz">download Quiz</button>
+    <button id="downloadDebugg">download Debugg</button>
+    <button id="downloadTreasure">download treasure Hunt</button>
+    <button id="downloadPhotography">download Photography</button>
+    <button id="downloadVideography">download Videography</button>
+    <button id="downloadAllData">download all data</button>
+  </section>
+<!-- ----------------------------------------------------------------------- -->
+<!-- liveevent--------------------------------------------------------------------------------------------------- -->
+<section id="live">
+  <div style="background-color: #000000;"><h2 style="padding: 20px; color: rgb(255, 255, 255); text-align: center;">live updates</h2></div>
+  <div class="container">
+    <div class="table-container">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Event Status</th>
+            <th class="update-col">Update</th>
+          </tr>
+        </thead>
+        <tbody id="event-table-body">
+          <!-- Event data will be populated here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="Announcement" style="background-color: #ffffff; margin:-20px; align-items: center; justify-content: center;">
+    
+  <div style="background-color: #000000;"><h2 style="padding: 20px; color: rgb(255, 255, 255); text-align: center;">ADD ANNOUNCEMENT</h2></div>
+    <form id="announcement" style="align-items: center; justify-content: center">
+      <label style="padding: 20px; font-size: x-large;">Announcement</label>
+      <input name="announcement" style="width: 400px;">
+      <button>Add</button>
+      
+    
+    </form>
+    
+  </section>
+<!-- -------------------------------------------------------------------------- -->
+<section id="scoreboard-section" style="background-color: #e47272; margin:-20px; ">
+  <div style="background-color: #000000;"><h2 style="padding: 20px; color: rgb(255, 255, 255); text-align: center;">SCOREBOARD</h2></div>
+    
+    <form id="scoreboard"  ></form>
+
+</section>
+<!-- -------------------------------------------------------------------------- -->
+<section id="replica">
+    <h2>Replica</h2>
+    <table border="1" align="center" style="width: 100%" id="replicaTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+    <!-- //Technova -->
+<section id="technova">
+    <h2 id="heading">Technova</h2>
+    <table border="1" align="center" style="width: 100%" id="technovaTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+
+</section>
+    <!-- lamgame -->
+  <section id="langame">
+    <h2 id="heading">langame nfs</h2>
+    <table border="1" align="center" style="width: 100%" id="langameTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+    <!-- web desighn -->
+    <section id="webdesigning">
+    <h2 id="heading">cultural</h2>
+    <table border="1" align="center" style="width: 100%" id="culturalTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+    <!-- debate -->
+    <section id="debate">
+    <h2 id="heading">debate</h2>
+    <table border="1" align="center" style="width: 100%" id="debateTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+    <!-- debugging -->
+    <section id="debugging">
+    <h2 id="heading">debugging</h2>
+    <table border="1" align="center" style="width: 100%" id="debuggingTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+    <!-- quiz -->
+    <section id="quiz">
+    <h2 id="heading">quiz</h2>
+    <table border="1" align="center" style="width: 100%" id="quizTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+    <!-- ppt -->
+    <section id="ppt">
+    <h2 id="heading">ppt</h2>
+    <table border="1" align="center" style="width: 100%" id="pptTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+    <!-- treasure hunt -->
+    <section id="treasure">
+    <h2 id="heading">treasure hunt</h2>
+    <table border="1" align="center" style="width: 100%" id="treasureTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+  <section id="seminar">
+    <h2 id="heading"> seminar</h2>
+    <table border="1" align="center" style="width: 100%" id="seminarTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+  <section id="photography">
+    <h2 id="heading"> photography</h2>
+    <table border="1" align="center" style="width: 100%" id="photographyTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+  <section id="videography">
+    <h2 id="heading"> videography</h2>
+    <table border="1" align="center" style="width: 100%" id="videographyTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+  </main>
+    <script>
+// <!-- -------------------------------------------------------------------------- -->
+
+// all data button download-------------------------------------
+const downloadAllData = document.getElementById("downloadAllData");
+downloadAllData.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/all", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "All data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+
+      const downloadTechnova = document.getElementById("downloadTechnova");
+      downloadTechnova.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/technova", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "technova data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+    //  button replica======================================================
+      const downloadReplica = document.getElementById("downloadReplica");
+      downloadReplica.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/replica", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "replica data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+      //langame===================================================
+      const downloadLangame = document.getElementById("downloadLangame");
+      downloadLangame.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/langame", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "Langame data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+      //cultural========================================
+      const downloadCultural = document.getElementById("downloadCultural");
+      downloadCultural.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/cultural", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "cultural data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+//debate===========================================
+      const downloadDebate = document.getElementById("downloadDebate");
+      downloadDebate.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/debate", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "debate data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+//seminar===========================================
+      const downloadSeminar = document.getElementById("downloadSeminar");
+      downloadSeminar.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/seminar", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "seminar data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+//ppt===================================
+      const downloadPpt = document.getElementById("downloadPpt");
+      downloadPpt.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/ppt", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "ppt data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+// quiz============================================
+
+const downloadQuiz = document.getElementById("downloadQuiz");
+downloadQuiz.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/quiz", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "quiz data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+// debugg============================================
+
+const downloadDebugg = document.getElementById("downloadDebugg");
+downloadDebugg.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/debugg", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "debugg data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+//treasure hunt======================
+const downloadTreasure = document.getElementById("downloadTreasure");
+downloadTreasure.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/treasure", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "Treasure Hunt data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+      //photography hunt======================
+const downloadPhotography = document.getElementById("downloadPhotography");
+downloadPhotography.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/photography", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "photography data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+      //videography hunt======================
+const downloadVideography = document.getElementById("downloadVideography");
+downloadVideography.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/videography", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "Videography data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+
+
+
+
+      // <!-- -------------------------------------------------------------------------- -->
+      const announcementForm = document.getElementById("announcement");
+      announcementForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        fetch("https://insight-backend.onrender.com/api/anno", {
+          method: "POST",
+          body: JSON.stringify({ value: formData.get("announcement") }),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
+          },
+        });
+      });
+// -----------------------------------------------------------------------------------------
+// scoreboard
+      function fetchAndShowScoreBoard() {
+        console.log("hello");
+
+        const scoreboard = document.getElementById("scoreboard");
+
+        scoreboard.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const formData = new FormData(e.currentTarget);
+          const teams = Array.from(formData.keys());
+          const data = teams.map((id) => ({
+            [id]: parseInt(formData.get(id)),
+          }));
+          console.log(data);
+          fetch("https://insight-backend.onrender.com/api/score/all", {
+            method: "POST",
+            body: JSON.stringify({ newscoreboard: data }),
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: localStorage.getItem("token"),
+            },
+          });
+
+          //
+        });
+
+        fetch("https://insight-backend.onrender.com/api/score/all", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response?.json().then((score) => {
+            console.log(score);
+            score?.forEach((team) => {
+              //         <div name="">
+              //     <label>CCSIT</label>
+              //     <input value="300"/>
+              // </div>
+              console.log(team);
+
+              const teamDiv = document.createElement("div");
+              const label = document.createElement("label");
+              label.innerText = team?.name;
+
+              teamDiv.appendChild(label);
+
+              const scoreInput = document.createElement("input");
+              scoreInput.value = team?.score;
+              scoreInput.name = team?._id;
+              teamDiv.appendChild(scoreInput);
+
+              scoreboard.appendChild(teamDiv);
+            });
+            const submitScoreButton = document.createElement("button");
+            submitScoreButton.innerText = "Update score";
+            scoreboard.appendChild(submitScoreButton);
+          });
+        });
+      }
+
+      fetchAndShowScoreBoard();
+
+      // Fetch data from the server
+      function fetchAndCreateTable() {
+        fetch("https://insight-backend.onrender.com/api/admin2/register", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          if (response?.status == 404) {
+            window.location.href = "./login.html";
+          }
+          response.json().then((data) => {
+ //Start of technovaLogic
+            const technovaTable = document.getElementById("technovaTable");
+            const technovaBody = technovaTable.querySelector("tbody");
+            technovaBody.innerHTML = "";
+            data?.techData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "technova"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              row.appendChild(payStatus);
+
+              technovaBody.appendChild(row);
+            });
+ //Start of replica logic
+            const replicaTable = document.getElementById("replicaTable");
+            const replicaBody = replicaTable.querySelector("tbody");
+            replicaBody.innerHTML = "";
+
+            // server  V
+            data?.replicaData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "replica"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              replicaBody.appendChild(row);
+            });
+            //end of replica logic
+
+            // paste here
+
+//Start of langame logic
+            const langameTable = document.getElementById("langameTable");
+            const langameBody = langameTable.querySelector("tbody");
+            langameBody.innerHTML = "";
+
+            // server  V
+            data?.langameData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "langame"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              langameBody.appendChild(row);
+            });
+
+            //
+//Start of cultural logic
+            const culturalTable = document.getElementById("culturalTable");
+            const culturalBody = culturalTable.querySelector("tbody");
+            culturalBody.innerHTML = "";
+
+            // server  V
+            data?.culturalData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "cultural"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              culturalBody.appendChild(row);
+            });
+            //end of cultural logic
+
+//Start of debate logic
+            const debateTable = document.getElementById("debateTable");
+            const debateBody = debateTable.querySelector("tbody");
+            debateBody.innerHTML = "";
+
+            // server  V
+            data?.debateData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "debate"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              debateBody.appendChild(row);
+            });
+
+//Start of debugging logic
+          const debuggingTable = document.getElementById("debuggingTable");
+            const debuggingBody = debuggingTable.querySelector("tbody");
+            debuggingBody.innerHTML = "";
+
+            // server  V
+            data?.debugData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "debugg"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              debuggingBody.appendChild(row);
+            });
+            //end of debugging logic  //
+//Start of quiz logic
+          const quizTable = document.getElementById("quizTable");
+            const quizBody = quizTable.querySelector("tbody");
+            quizBody.innerHTML = "";
+
+            // server  V
+            data?.quizData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "quiz"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              quizBody.appendChild(row);
+            });
+            //end of quiz logic  //
+//Start of ppt logic
+const pptTable = document.getElementById("pptTable");
+            const pptBody = pptTable.querySelector("tbody");
+            pptBody.innerHTML = "";
+
+            // server  V
+            data?.pptData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "ppt"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              pptBody.appendChild(row);
+            });
+            //end of ppt logic
+//Start of treasure hunt logic
+const treasureTable = document.getElementById("treasureTable");
+            const treasureBody = treasureTable.querySelector("tbody");
+            treasureBody.innerHTML = "";
+
+            // server  V
+            data?.TreasureHuntData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "treasure"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              treasureBody.appendChild(row);
+            });
+            //end of treasure hunt logic  //
+//Start of seminar  logic
+const seminarTable = document.getElementById("seminarTable");
+            const seminarBody = seminarTable.querySelector("tbody");
+            seminarBody.innerHTML = "";
+
+            // server  V
+            data?.seminarData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "seminar"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              seminarBody.appendChild(row);
+            });
+            //end of seminar  logic  //
+//Start of photography  logic
+const photographyTable = document.getElementById("photographyTable");
+            const photographyBody = photographyTable.querySelector("tbody");
+            photographyBody.innerHTML = "";
+
+            // server  V
+            data?.PhotographyData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "photography"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              photographyBody.appendChild(row);
+            });
+            //end of photography  logic  //
+//Start of videography  logic
+const videographyTable = document.getElementById("videographyTable");
+            const videographyBody = videographyTable.querySelector("tbody");
+            videographyBody.innerHTML = "";
+
+            // server  V
+            data?.VideographyData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "videography"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              videographyBody.appendChild(row);
+            });
+            //end of photography  logic  //
+          });
+        });
+      }
+      fetchAndCreateTable();
+
+      function togglePaymentStatus(id, status, eventName) {
+        fetch("https://insight-backend.onrender.com/api/admin2/togglepayment", {
+          method: "POST",
+          body: JSON.stringify({ id, status, eventName }),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((res) => {
+          console.log("Toggle sucess");
+          fetchAndCreateTable();
+        });
+      }
+
+      const LogoutButton = document.getElementById("logout");
+      LogoutButton.addEventListener("click", () => {
+        localStorage.removeItem("token");
+        window.location.href = "/login.html";
+      });
+    </script>
+
+    <!-- ===================================================================================================================== -->
+    <!-- ////top button -->
+    <button onclick="topFunction()" id="topButton" title="Go to top">Top</button>
+<script>// When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("topButton").style.display = "block";
+    } else {
+      document.getElementById("topButton").style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+  </script>
+
+
+
+<!-- live event script--------------------------------------------------------------------------------------- -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Fetch event data from backend
+    fetch('https://insight-backend.onrender.com/api/liveevent')
+      .then(response => response.json())
+      .then(events => {
+        events.forEach(event => {
+          const eventTableRow = document.createElement('tr');
+          const eventStatusCell = document.createElement('td');
+          const eventStatusSelect = document.createElement('select');
+          eventStatusSelect.className = 'form-control';
+          eventStatusSelect.id = `event-color-${event._id}`;
+          eventStatusSelect.title = 'Select color for event'; // Add title attribute
+          const greyOption = createOption('grey', 'Grey', event.color);
+          const redOption = createOption('red', 'Red', event.color);
+          const greenOption = createOption('green', 'Green', event.color);
+          eventStatusSelect.appendChild(greyOption);
+          eventStatusSelect.appendChild(redOption);
+          eventStatusSelect.appendChild(greenOption);
+          eventStatusCell.appendChild(eventStatusSelect);
+          const updateCell = document.createElement('td');
+          const updateButton = document.createElement('button');
+          updateButton.className = 'btn btn-primary update-btn';
+          updateButton.dataset.eventId = event._id;
+          updateButton.innerText = 'Update';
+          updateCell.appendChild(updateButton);
+          eventTableRow.appendChild(document.createElement('td')).innerText = event.eventname;
+          eventTableRow.appendChild(eventStatusCell);
+          eventTableRow.appendChild(updateCell);
+          document.getElementById('event-table-body').appendChild(eventTableRow);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching events:', error);
+        alert('Failed to fetch events');
+      });
+
+    // Handle update button click
+    document.addEventListener('click', function(event) {
+      if (event.target.classList.contains('update-btn')) {
+        const eventId = event.target.dataset.eventId;
+        const newColor = document.getElementById(`event-color-${eventId}`).value;
+        fetch(`https://insight-backend.onrender.com/api/liveevent/${eventId}`, { // Update the endpoint to include eventId
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: localStorage.getItem("token"),
+          },
+          body: JSON.stringify({ color: newColor })
+        })
+        .then(response => response.json())
+        .then(data => {
+          alert(data.message);
+          // You may update the UI as per your requirement after successful update
+        })
+        .catch(error => {
+          console.error('Error updating event color:', error);
+          alert('Failed to update event color');
+        });
+      }
+    });
+  });
+
+  function createOption(value, text, selectedValue) {
+    const option = document.createElement('option');
+    option.value = value;
+    option.innerText = text;
+    if (value === selectedValue) {
+      option.selected = true;
+    }
+    return option;
+  }
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+
+    
+    <style>
+        
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 15px;
+            color: #666;
+            margin: 100;
+        }
+        
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul {
+            margin: 0;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        ul {
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
+        
+        input,
+        textarea,
+        select,
+        button {
+            font-family: "Montserrat-Regular";
+            font-size: 15px;
+            color: #666;
+        }
+        
+        textarea {
+            resize: none;
+        }
+        
+         :focus {
+            outline: none;
+        }
+        
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: url("../images/bg-registration-form-6.jpg") no-repeat center center;
+            background-size: cover;
+        }
+        
+        .inner {
+            min-width: 861px;
+            transform: translateX(47px);
+            margin: auto;
+            display: flex;
+            background: #fff;
+            border-radius: 20px;
+            padding-top: 35px;
+            padding-bottom: 35px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            -ms-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            -o-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        }
+        
+        .image-holder img {
+            border-radius: 15px;
+            transform: translateX(-94px);
+        }
+        
+        form {
+            padding-top: 42px;
+            min-width: 63.88%;
+            transform: translateX(-34px);
+        }
+        
+        h3 {
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 21px;
+            color: #333;
+            text-transform: uppercase;
+            font-family: "Open Sans", sans-serif;
+        }
+        
+        h4 {
+            font-family: "Raleway", sans-serif;
+        }
+        
+        .form-control {
+            height: 47px;
+            display: block;
+            border: 1px solid #e6e6e6;
+            background: none;
+            border-radius: 5px;
+            padding: 0 19px;
+        }
+        
+        .form-control:focus {
+            border: 1px solid #f4d5cc;
+        }
+        
+        .form-control::-webkit-input-placeholder {
+            color: #999;
+        }
+        
+        .form-control::-moz-placeholder {
+            color: #999;
+        }
+        
+        .form-control:-ms-input-placeholder {
+            color: #999;
+        }
+        
+        .form-control:-moz-placeholder {
+            color: #999;
+        }
+        
+        select.form-control {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        select.form-control option[value=""][disabled] {
+            display: none;
+        }
+        
+        textarea.form-control {
+            width: 100%;
+            padding-top: 13px;
+            padding-bottom: 13px;
+        }
+        
+        .form-row {
+            display: inline-flex;
+            margin-bottom: 20px;
+        }
+        
+        .form-row .form-control {
+            width: 50%;
+        }
+        
+        .form-row .form-control:first-child {
+            margin-right: 20px;
+            margin-left: 10px;
+        }
+        
+        .form-row .form-holder {
+            width: 50%;
+        }
+        
+        .form-row .form-holder .form-control {
+            width: 100%;
+        }
+        
+        .form-holder {
+            position: reative;
+        }
+        
+        .form-holder i {
+            position: absolute;
+            top: 100%;
+            transform: translateY(-50%);
+            right: 20px;
+        }
+        
+        button {
+            height: 47px;
+            width: 174px;
+            display: flex;
+            border: none;
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            margin-top: 30px;
+            cursor: pointer;
+            font-family: "Montserrat-Medium";
+            text-transform: uppercase;
+            background: #84cde1;
+            border-radius: 5px;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            overflow: hidden;
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            -webkit-transition-property: color, background-color;
+            transition-property: color, background-color;
+        }
+        
+        button i {
+            margin-left: 8px;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        
+        button:hover {
+            -webkit-animation-name: hvr-back-pulse;
+            animation-name: hvr-back-pulse;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            background-color: #17c8f8;
+            color: white;
+        }
+        
+        button:hover i {
+            -webkit-animation-name: hvr-icon-buzz-out;
+            animation-name: hvr-icon-buzz-out;
+            -webkit-animation-duration: 0.75s;
+            animation-duration: 0.75s;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+        
+        @-webkit-keyframes hvr-back-pulse {
+            50% {
+                background-color: rgba(32, 152, 209, 0.75);
+            }
+        }
+        
+        @keyframes hvr-back-pulse {
+            50% {
+                background-color: rgba(32, 152, 209, 0.75);
+            }
+        }
+        
+        @-webkit-keyframes hvr-icon-buzz-out {
+            10% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+            20% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+            30% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+            40% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+            50% {
+                -webkit-transform: translateX(2px) rotate(1deg);
+                transform: translateX(2px) rotate(1deg);
+            }
+            60% {
+                -webkit-transform: translateX(-2px) rotate(-1deg);
+                transform: translateX(-2px) rotate(-1deg);
+            }
+            70% {
+                -webkit-transform: translateX(2px) rotate(1deg);
+                transform: translateX(2px) rotate(1deg);
+            }
+            80% {
+                -webkit-transform: translateX(-2px) rotate(-1deg);
+                transform: translateX(-2px) rotate(-1deg);
+            }
+            90% {
+                -webkit-transform: translateX(1px) rotate(0);
+                transform: translateX(1px) rotate(0);
+            }
+            100% {
+                -webkit-transform: translateX(-1px) rotate(0);
+                transform: translateX(-1px) rotate(0);
+            }
+        }
+        
+        @keyframes hvr-icon-buzz-out {
+            10% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+            20% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+            30% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+            40% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+            50% {
+                -webkit-transform: translateX(2px) rotate(1deg);
+                transform: translateX(2px) rotate(1deg);
+            }
+            60% {
+                -webkit-transform: translateX(-2px) rotate(-1deg);
+                transform: translateX(-2px) rotate(-1deg);
+            }
+            70% {
+                -webkit-transform: translateX(2px) rotate(1deg);
+                transform: translateX(2px) rotate(1deg);
+            }
+            80% {
+                -webkit-transform: translateX(-2px) rotate(-1deg);
+                transform: translateX(-2px) rotate(-1deg);
+            }
+            90% {
+                -webkit-transform: translateX(1px) rotate(0);
+                transform: translateX(1px) rotate(0);
+            }
+            100% {
+                -webkit-transform: translateX(-1px) rotate(0);
+                transform: translateX(-1px) rotate(0);
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .inner {
+                min-width: auto;
+                max-width: 660px;
+            }
+            form {
+                padding-top: 0;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .inner {
+                display: block;
+                transform: translateX(0);
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .image-holder img {
+                transform: translateX(0);
+                border-radius: 0;
+            }
+            form {
+                transform: translateX(0);
+                padding-top: 40px;
+            }
+            .form-row {
+                display: block;
+            }
+            .form-row .form-control,
+            .form-row .form-holder {
+                width: 100%;
+            }
+            .form-control {
+                margin-bottom: 20px;
+            }
+            .wrapper {
+                background: none;
+            }
+        }
+        
+        btn-learn-more {
+            font-family: "Raleway", sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 50px;
+            transition: 0.3s;
+            line-height: 1;
+            color: #3498db;
+            animation-delay: 0.8s;
+            margin-top: 6px;
+            border: 2px solid #3498db;
+            }
+            
+    </style>
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<title>Technova | insight24</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
+
+<!-- logo -->
+<link href="assets/img/insight24logo.png" rel="icon">
+
+<!-- Google Fonts -->
+<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!--  CSS Files -->
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+<!--  Main CSS File -->
+<link href="assets/css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+    <!-- <script>
+
+
+      let loginForm = document.getElementById("loginForm");
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        console.log("hello");
+
+      });
+
+      function makeApiCall() {
+        fetch('http://localhost:7000/api/technova/registration', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(dataToSend),
+        })
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('result').innerText = JSON.stringify(data);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      }
+    </script> -->
+
+
+
+l
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1><a href="index.html" style="color:white;">insight'24</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+                    <li><a class="nav-link scrollto " href="#Registration">Registration</a></li>
+                    <li><a class="nav-link scrollto " href="#Guidelines">Guidelines</a></li>
+                    <li><a class="nav-link scrollto " href="#payment">Payment</a></li>
+
+                </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="section-title">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Technova 6.0</h2>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Breadcrumbs -->
+
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="Registration" class="portfolio-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="portfolio-details-slider swiper">
+                            <div class="swiper-wrapper align-items-center">
+                                <div class="">
+                                    <img src="assets/img/final/TECHNOVA 2024.jpg" alt="" width="432" height="540">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 text-center d-flex">
+                        <div class="portfolio-info d-flex">
+                            <form action="" id="registrationForm" class="d-flex row">
+                                <h3>Registration</h3>
+                                <div class="formmaindiv d-flex align-items-center justify-content-center ">
+                                    <div class=" align-items-center justify-content-between">
+
+                                        <div class="align-items-center justify-content-between">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci1" class="form-control" placeholder="Team Leader">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci1Phone" class="form-control" placeholder="Phone" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci2" class="form-control" placeholder="Participant 2">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci2Phone" class="form-control" placeholder="Phone" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci3" class="form-control" placeholder="Participant 3">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci3Phone" class="form-control" placeholder="Phone" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci4" class="form-control" placeholder="Participant 4">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci4Phone" class="form-control" placeholder="Phone" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci5" class="form-control" placeholder="Participant 5">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="text" id="partci5Phone" class="form-control" placeholder="Phone" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>                       
+                                            
+                                    
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <input type="email" id="email" class="form-control" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group py-1">
+                                                        <select name="" id="collegename" class="form-control">
+                                                            <option value="" disabled selected>COLLEGE</option>
+                                                            <option value="CCSIT MANJERY">CCSIT MANJERY</option>
+                                                            <option value="CCSIT VADAKARA">CCSIT VADAKARA</option>
+                                                            <option value="CCSIT DR.JMC">CCSIT DR.JMC</option>
+                                                            <option value="CCSIT KKTM PULLUT">CCSIT KKTM PULLUT</option>
+                                                            <option value="CCSIT THALIKKULAM">CCSIT THALIKKULAM</option>
+                                                            <option value="CCSIT MUTTIL">CCSIT MUTTIL</option>
+                                                            <option value="CCSIT KUTTIPPURAM">CCSIT KUTTIPPURAM</option>
+                                                            <option value="CCSIT MES KALLADI">CCSIT MES KALLADI</option>
+                                                            <option value="CCSIT PALAKKAD">CCSIT PALAKKAD</option>
+                                                            <option value="CCSIT PUTHUKKAD">CCSIT PUTHUKKAD</option>
+                                                            <option value="CCSIT THIROOR">CCSIT PEERAMANGALAM</option>
+                                                            <option value="CU CAMPUS"> CU CAMPUS</option>
+                                                            <option value="OTHER">OTHER</option>  
+                                                          </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    
+                                            <p id="errormessage"></p>
+                                    
+                                            <div class="row">
+                                                <div class="col text-center">
+                                                    <br>
+                                                    <button class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="payment" class="d-flex align-items-center justify-content-center" style="background-color: rgb(255, 255, 255); ">
+            <!-- <section id="about " class="about "> -->
+                <div class="container">
+        
+                    <div class="section-title py-5" data-aos="fade-up ">
+                        <h2>PAYMENTS</h2>
+                    </div>
+        
+                    <div class="row content" style="display: flex;">
+                        <div class="col-lg-6" style="align-self: flex-start;" data-aos="fade-up " data-aos-delay="150">                        
+                                <ul style="align-items: center; text-align: center; padding-left: 10px;" >
+                                  <h4>For Payment </h4>
+                                  <div style="text-align: center;">
+                                    <a href="https://wa.me/+919847960663" target="_blank" style="text-align: center;"> <b>+919847960663</b></a>
+                                  </div>
+                                  <img src="assets/img/qrcode.jpeg" alt="" height="250px" weight="250px">                        
+                                </ul>
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0  " data-aos="fade-up " data-aos-delay="300 ">
+                            <p>
+                                  <i class="ri-check-double-line "></i>&nbsp;&nbsp;Registration Fee: <b></b> <b>₹500</b> <br>
+                                  <i class="ri-check-double-line "></i>&nbsp;&nbsp;Complete the registration process by initiating the payment through the provided QR code or Phone number. <br>
+                                  <i class="ri-check-double-line "></i>&nbsp;&nbsp;Send the payment screenshot to <b><a href="https://wa.me/+919847960663">+919847960663</a></b><br>
+                                  <i class="ri-check-double-line "></i>&nbsp;&nbsp;Also share the registered name, phone number and e-mail with the screenshot.
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <!-- </section> -->
+        </section>
+
+
+        <section id="Guidelines" class="d-flex align-items-center justify-content-center" style="background-color: rgb(255, 255, 255); margin: 40px auto;">
+            <section id="about " class="about ">
+                <div class="container ">
+
+                    <div class="section-title " data-aos="fade-up ">
+                        <h2>GUIDELINES</h2>
+                    </div>
+
+                    <div class="row content ">
+                        <div class="col-lg-6 " data-aos="fade-up " data-aos-delay="150 ">
+                            <p>
+                               
+                                <ul>
+                                    <li><i class="ri-check-double-line "></i>There will be multiple tasks in each level, with varying difficulties.
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i>The participating teams should report at the venue at least 30 mins in advance.
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i>Participating teams are required to bring at least one laptop.
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i>Participation can be in groups or individually.</li>
+                                    <li><i class="ri-check-double-line "></i>If the number of registrationss exceeds a limit, a prelims round may be conducted </li>
+                                    
+                                    <li><i class="ri-check-double-line "></i>Each team can contain a maximum of 5 members.
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i> Every team and individual participant will be assigned one or more volunteers by the TECHNOVA core team. 
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i>There will be an elimination stage at a certain point in the game
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i>Final decisions will be made by the TECHNOVA core team. No further queries or appeals in the decision will be entertained.
+
+                                    </li>
+                                    
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0 " data-aos="fade-up " data-aos-delay="300 ">
+                            <p>
+                                
+                                <ul>
+                                    <li><i class="ri-check-double-line "></i>Internet access will be provided in varying degrees as per requirements.
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i> Any malpractice found during th event will lead to direct disqualification.</li>
+                                    <li><i class="ri-check-double-line "></i>Participants are required to have basic knowledge in any one  of the programming languages such as c, c++, python, java, php, etc...
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i>The Jackpot Prize of 25000 wil be awarded to the participants which crack all the levels first.
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i> Participants can request for a limited number of clues to their assigned volunteers in case they get stuck at any particular task.
+                                    </li>
+                                    <li><i class="ri-check-double-line "></i>The use of any browser extensions are strictly not allowed.</li>
+                                    
+
+                                   
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- End Portfolio Details Section -->
+
+        <!-- -------------------------payment gateway------------ -->
+  <!-- End Portfolio Details Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+  <footer id="footer" class="mt-5">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6 text-lg-left text-center">
+                <div class="copyright">
+                    <strong>&copy;</strong>
+                    <strong>insight'24</strong>.
+                </div>
+                <div class="credits">
+                    <span><b>STUDENTS HELPLINE | <a href="https://wa.me/+919400442456" target="_blank">+91
+                                9400442456</a></b></span>
+                </div>
+            </div>
+            <div class="col-lg-6 text-lg-right text-center ">
+                <div class="social-links">
+                    <!--<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>-->
+                    <a href="https://www.facebook.com/insightfest" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+                    &nbsp;
+                    &nbsp;
+
+                    <a href="https://www.instagram.com/insight.24_/?hl=en" target="_blank" class="instagram"><i
+                            class="bi bi-instagram "></i></a>
+                            &nbsp;
+                            &nbsp;
+                    <!--<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>-->
+                    <a href="mailto:insightcuc@gmail.com" target="_blank" class="linkedin"><i class="bi bi-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+<!-- End Footer -->
+
+    <a href="# " class="back-to-top d-flex align-items-center justify-content-center "><i
+        class="bi bi-arrow-up-short "></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js "></script>
+    <script src="assets/vendor/aos/aos.js "></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js "></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js "></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js "></script>
+    <script src="assets/vendor/php-email-form/validate.js "></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js "></script>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+
+
+            const selectElement = document.getElementById('collegename');
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const selectedValue = selectedOption.value;
+
+            let email = document.getElementById("email").value;
+            let partci1 = document.getElementById("partci1").value;
+            let partci2 = document.getElementById("partci2").value;
+            let partci3 = document.getElementById("partci3").value;
+            let partci4 = document.getElementById("partci4").value;
+            let partci5 = document.getElementById("partci5").value;
+            let partci1Phone = document.getElementById("partci1Phone").value;
+            let partci2Phone = document.getElementById("partci2Phone").value;
+            let partci3Phone = document.getElementById("partci3Phone").value;
+            let partci4Phone = document.getElementById("partci4Phone").value;
+            let partci5Phone = document.getElementById("partci5Phone").value;
+
+            let dataArray = [];
+
+            function addToDataArray(partci, partciPhone, isAdmin) {
+                if (partci.trim() !== '' && partciPhone.trim() !== '') {
+                    if (isAdmin)
+                        dataArray.push({
+                            username: partci,
+                            phone: partciPhone,
+                            isAdmin: isAdmin
+                        });
+                    else dataArray.push({
+                        username: partci,
+                        phone: partciPhone
+                    });
+                }
+            }
+
+            addToDataArray(partci1, partci1Phone, true);
+            addToDataArray(partci2, partci2Phone);
+            addToDataArray(partci3, partci3Phone);
+            addToDataArray(partci4, partci4Phone);
+            addToDataArray(partci5, partci5Phone);
+
+
+            const dataToBackend = {
+                email: email,
+                collegename: selectedValue,
+                participants: dataArray
+            }
+
+
+            let responseData;
+            let responseStatus;
+
+            // fetch('https://insight24-backend.onrender.com', {
+            fetch('https://insight-backend.onrender.com/api/technova/registration', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dataToBackend),
+                })
+                .then(response => {
+                    
+                    responseStatus = response.status;
+                    return response.json();
+                })
+                .then(res => {
+                    responseData = res;
+                    handleResponse(responseData, responseStatus)
+                    console.log(res);
+                });
+
+            console.log(responseData);
+            console.log(responseStatus);
+
+        });
+
+        function handleResponse(data, status) {
+            if (status === 400) {
+                document.getElementById("errormessage").innerHTML = data.message;
+            } else {
+                document.getElementById("errormessage").innerHTML = data.message;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

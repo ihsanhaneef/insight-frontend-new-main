@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css"
+    />
+    <!-- Add your head content, including styles and external scripts -->
+    <title>Announcement | insight24</title>
+
+    <style>
+      body {
+        padding: 20px;
+        background-color: #ffffff;
+      }
+
+      .container1 {
+        background-color: black;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 100px;
+      }
+
+      .announcement-section {
+        margin-top: 20px;
+      }
+
+      .announcement {
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .announcement-item {
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+
+    <!-- Your existing head content -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/insight24logo.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <!-- Bootstrap JavaScript files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <!-- ... (previous code) ... -->
+    <!-- Bootstrap JavaScript files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+
+    <!-- ... (remaining code) ... -->
+
+    <!-- =======================================================
+    * Template Name: Vesperr
+    * Updated: Sep 18 2023 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+  </head>
+
+  <body>
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1><a href="index.html" style="color: white">insight24</a></h1>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link scrollto active" href="index.html">Home</a>
+            </li>
+            <li><a class="nav-link scrollto " href="index.html#updates">Updates</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <div class="container1">
+      <h1
+        class="mb-4"
+        style="
+          text-align: center;
+          color: rgb(255, 255, 255);
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+            sans-serif;
+        "
+      >
+        Insight'24 Announcement !!!
+      </h1>
+
+      <div class="announcement-section" id="announcement-container">
+        <!-- Latest Announcement -->
+        <!-- <div class="alert alert-success announcement" role="alert" id="announcement-item">
+                <strong>Insight'24 Announcement</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div> -->
+
+        <!-- Previous Announcement -->
+        <!-- <div class="alert alert-warning announcement" role="alert">
+                <strong>Attention!</strong> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div> -->
+
+        <!-- Add more announcements as needed -->
+      </div>
+    </div>
+
+    <div id="announcement-container " class="container">
+      <!-- Announcements will be added here dynamically -->
+    </div>
+
+    <!-- ... (previous code) ... -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const api = "https://insight-backend.onrender.com";
+        const container = document.getElementById("announcement-container");
+
+        fetch(api + "/api/anno/ann")
+          .then((res) => res.json())
+          .then((responseJson) => {
+            console.log("Data from the server:", responseJson);
+
+            // Reverse the array to display the latest announcement first
+            const reversedAnnouncements = responseJson.reverse();
+
+            reversedAnnouncements.forEach((announcement, idx) => {
+              const announcDiv = document.createElement("div");
+              announcDiv.className = "announcement-item";
+
+              const nameDiv = document.createElement("div");
+              nameDiv.className = "announcement-name";
+              nameDiv.innerHTML =
+                "<strong style='color: red;'>Attention!: &nbsp &nbsp</strong> " +
+                announcement.Anmt;
+
+              announcDiv.appendChild(nameDiv);
+              container.appendChild(announcDiv);
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      });
+    </script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
