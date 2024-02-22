@@ -157,6 +157,7 @@ input {
                 <li><a class="nav-link scrollto " href="#ppt">ppt</a></li>
                 <li><a class="nav-link scrollto" href="#treasure">treasure</a></li>
                 <li><a class="nav-link scrollto " href="#seminar">seminar</a></li>
+                <li><a class="nav-link scrollto " href="#webdesigning">webdesign</a></li>
                 <li><a class="nav-link scrollto " href="#photography">photography</a></li>
                 <li><a class="nav-link scrollto " href="#videography">videography</a></li>
             </ul>
@@ -178,6 +179,7 @@ input {
     <button id="downloadPpt">download Ppt data</button>
     <button id="downloadQuiz">download Quiz</button>
     <button id="downloadDebugg">download Debugg</button>
+    <button id="downloadwebdesign">download web design</button>
     <button id="downloadTreasure">download treasure Hunt</button>
     <button id="downloadPhotography">download Photography</button>
     <button id="downloadVideography">download Videography</button>
@@ -284,6 +286,26 @@ input {
   </section>
     <!-- web desighn -->
     <section id="webdesigning">
+    <h2 id="heading">webdesign</h2>
+    <table border="1" align="center" style="width: 100%" id="webdesignTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>College Name</th>
+          <th>Participant Name</th>
+          <th>Phone</th>
+          <th>payment status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- console.log(data) -->
+        <!-- Data will be inserted here dynamically -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- cultural -->
+  <section id="cultural">
     <h2 id="heading">cultural</h2>
     <table border="1" align="center" style="width: 100%" id="culturalTable">
       <thead>
@@ -301,6 +323,7 @@ input {
       </tbody>
     </table>
   </section>
+
     <!-- debate -->
     <section id="debate">
     <h2 id="heading">debate</h2>
@@ -320,6 +343,7 @@ input {
       </tbody>
     </table>
   </section>
+
     <!-- debugging -->
     <section id="debugging">
     <h2 id="heading">debugging</h2>
@@ -339,6 +363,7 @@ input {
       </tbody>
     </table>
   </section>
+
     <!-- quiz -->
     <section id="quiz">
     <h2 id="heading">quiz</h2>
@@ -358,6 +383,7 @@ input {
       </tbody>
     </table>
   </section>
+
     <!-- ppt -->
     <section id="ppt">
     <h2 id="heading">ppt</h2>
@@ -377,6 +403,7 @@ input {
       </tbody>
     </table>
   </section>
+
     <!-- treasure hunt -->
     <section id="treasure">
     <h2 id="heading">treasure hunt</h2>
@@ -396,6 +423,7 @@ input {
       </tbody>
     </table>
   </section>
+  <!-- seminar -->
   <section id="seminar">
     <h2 id="heading"> seminar</h2>
     <table border="1" align="center" style="width: 100%" id="seminarTable">
@@ -723,7 +751,7 @@ downloadDebugg.addEventListener("click", () => {
         });
       });
 
-//treasure hunt======================
+//treasure hunt 1======================
 const downloadTreasure = document.getElementById("downloadTreasure");
 downloadTreasure.addEventListener("click", () => {
         console.log("a");
@@ -794,6 +822,60 @@ downloadVideography.addEventListener("click", () => {
 
             // Set the file name for the download
             link.download = "Videography data.csv";
+
+            // Programmatically click the anchor element to trigger the download
+            link.click();
+
+            // Clean up - remove the anchor element and revoke the object URL
+            link.remove();
+          });
+        });
+      });
+
+// //treasure hunt======================
+// const downloadTreasure = document.getElementById("downloadTreasure");
+// downloadTreasure.addEventListener("click", () => {
+//         console.log("a");
+//         fetch("https://insight-backend.onrender.com/api/download/treasure", {
+//           method: "GET",
+//           headers: {
+//             Authorization: localStorage.getItem("token"),
+//           },
+//         }).then((response) => {
+//           response.blob().then((blob) => {
+//             // Create a temporary anchor element
+//             const link = document.createElement("a");
+//             link.href = window.URL.createObjectURL(blob);
+
+//             // Set the file name for the download
+//             link.download = "Treasure Hunt data.csv";
+
+//             // Programmatically click the anchor element to trigger the download
+//             link.click();
+
+//             // Clean up - remove the anchor element and revoke the object URL
+//             link.remove();
+//           });
+//         });
+//       });
+
+      //photography hunt======================
+const downloadwebdesign = document.getElementById("downloadwebdesign");
+downloadwebdesign.addEventListener("click", () => {
+        console.log("a");
+        fetch("https://insight-backend.onrender.com/api/download/webdesign", {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }).then((response) => {
+          response.blob().then((blob) => {
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+
+            // Set the file name for the download
+            link.download = "webdesign data.csv";
 
             // Programmatically click the anchor element to trigger the download
             link.click();
@@ -1463,6 +1545,67 @@ const photographyTable = document.getElementById("photographyTable");
               photographyBody.appendChild(row);
             });
             //end of photography  logic  //
+
+// ------------------
+
+//Start of web design  logic
+const webdesignTable = document.getElementById("webdesignTable");
+            const webdesignBody = webdesignTable.querySelector("tbody");
+            webdesignBody.innerHTML = "";
+
+            // server  V
+            data?.WebDesignData.forEach((entry) => {
+              const participant = entry.participants[0];
+
+              const row = document.createElement("tr");
+
+              const emailCell = document.createElement("td");
+              emailCell.textContent = entry.email;
+              row.appendChild(emailCell);
+
+              const collegeNameCell = document.createElement("td");
+              collegeNameCell.textContent = entry?.collegename;
+              row.appendChild(collegeNameCell);
+
+              const participantNameCell = document.createElement("td");
+              participantNameCell.textContent = participant?.username;
+              row.appendChild(participantNameCell);
+
+              const phoneCell = document.createElement("td");
+              phoneCell.textContent = participant?.phone;
+              row.appendChild(phoneCell);
+
+              const payStatus = document.createElement("td");
+              const hi = document.createElement("p");
+              hi.innerText = entry?.paymentStatus ? "✔️" : "❌";
+              payStatus.appendChild(hi);
+
+              const paidToggleButton = document.createElement("button");
+              paidToggleButton.innerText = "Toggle";
+
+              paidToggleButton.addEventListener("click", () => {
+                togglePaymentStatus(
+                  entry?._id,
+                  !entry?.paymentStatus,
+                  "webdesign"
+                );
+              });
+
+              payStatus.appendChild(paidToggleButton);
+
+              // payStatus.textContent = entry.paymentStatus;
+              row.appendChild(payStatus);
+
+              webdesignBody.appendChild(row);
+            });
+            //end of photography  logic  //
+
+
+
+
+
+// ----------------------
+
 //Start of videography  logic
 const videographyTable = document.getElementById("videographyTable");
             const videographyBody = videographyTable.querySelector("tbody");
