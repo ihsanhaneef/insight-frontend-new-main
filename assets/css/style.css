@@ -608,8 +608,14 @@ section {
 
 .clients {
     background: #f3f9fd;
+    /* padding: 10px 0; */
+    text-align: center;
+}
+.clientss {
+    background: #f3f9fd;
     padding: 10px 0;
     text-align: center;
+    padding-bottom: -10px;
 }
 
 .clients .col-lg-2 {
@@ -617,10 +623,22 @@ section {
     align-items: center;
     justify-content: center;
 }
+.clientss .col-lg-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .clients img {
     width: 50%;
-    filter: grayscale(100);
+    /* filter: grayscale(100); */
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    padding: 10px 0;
+}
+.clientss img {
+    width: 100%;
+    /* filter: grayscale(100); */
     transition: all 0.4s ease-in-out;
     display: inline-block;
     padding: 10px 0;
@@ -642,6 +660,7 @@ section {
         width: 30%;
     }
 }
+
 
 
 /*--------------------------------------------------------------
