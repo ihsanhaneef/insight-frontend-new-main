@@ -146,6 +146,8 @@ input {
                 <li><a class="nav-link scrollto active" href="#download">download</a></li>
                 <li><a class="nav-link scrollto active" href="#live">liveevent</a></li>
                 <li><a class="nav-link scrollto" href="#Announcement">Announcement</a></li>
+                <li><a class="nav-link scrollto" href="#Sponsor">Sponsor</a></li>
+
                 <li><a class="nav-link scrollto" href="#scoreboard">scoreboard</a></li>
                 <li><a class="nav-link scrollto " href="#replica">replica</a></li>
                 <li><a class="nav-link scrollto " href="#technova">technova</a></li>
@@ -222,7 +224,41 @@ input {
     </form>
     
   </section>
-<!-- -------------------------------------------------------------------------- -->
+
+<!-- sponsor adding   ==========================? -->
+<section id="Sponsor" style="background-color: #ffffff; margin:-20px; align-items: center; justify-content: center;">
+  <div class="mt-4">
+    <div style="background-color: #000000;">
+      <h2 style="padding: 20px; color: rgb(255, 255, 255); text-align: center;">ADD SPONSORS</h2>
+    </div>
+    
+    <label style="padding: 20px; font-size: x-large;">Sponsor</label>
+    <input type="text" id="imageUrl" class="form-control" placeholder="Enter image link" style="width: 400px;">
+    <button type="button" onclick="addImage()">Add Image</button>
+  </div>
+</section>
+
+<!-- winners adding ----------------------------------------------------------------------- -->
+<section id="winners" style="background-color: #ffffff; margin:-20px; align-items: center; justify-content: center;"></section>
+<div class="mt-4">
+  <div style="background-color: #000000;"><h2 style="padding: 20px; color: rgb(255, 255, 255); text-align: center;">ADD WINNERS</h2></div>
+  <form id="uploadForm">
+  <label style="padding: 20px; font-size: x-large;">Event Name</label>
+  <input type="text" id="eventname" name="eventname" required style="width: 400px;"><br><br>
+
+  <label style="padding: 20px; font-size: x-large;">Image Url</label>
+  <input type="text" id="imgUrl" name="imgUrl" required style="width: 400px;"><br><br>
+
+  <label style="padding: 20px; font-size: x-large;">Team Members</label>
+  <input type="text" id="team" name="team" required style="width: 400px;"><br><br>
+  <button type="submit">Upload</button>
+</form>
+</div>
+
+</section>
+
+
+<!-- -score board------------------------------------------------------------------------- -->
 <section id="scoreboard-section" style="background-color: #e47272; margin:-20px; ">
   <div style="background-color: #000000;"><h2 style="padding: 20px; color: rgb(255, 255, 255); text-align: center;">SCOREBOARD</h2></div>
     
@@ -1782,5 +1818,56 @@ const videographyTable = document.getElementById("videographyTable");
   }
 </script>
 
+
+<!-- winners uploading--------------------------------------?
+ -->
+
+
+
+ <script>
+  document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const eventname = document.getElementById('eventname').value;
+      const imgUrl = document.getElementById('imgUrl').value;
+      const team = document.getElementById('team').value.split(',').map(name => ({ name: name.trim() }));
+
+      const response = await fetch('https://insight-backend.onrender.com/api/winners/winners', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ eventname, imgUrl, team })
+      });
+
+      const result = await response.json();
+      console.log(result);
+      fetchWinners();
+  });
+</script>
+<script>
+  async function addImage() {
+      const imgUrl = document.getElementById('imageUrl').value;
+
+      try {
+        const response = await fetch('https://insight-backend.onrender.com/api/sponser/sponser', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ imgUrl })
+        });
+
+        if (response.ok) {
+          window.location.href = '/sponser'; // Redirect to show updated image list
+        } else {
+          const errorData = await response.json();
+          console.error('Error:', errorData.message);
+        }
+      } catch (error) {
+        console.error('Error:', error.message);
+      }
+    }
+
+</script>
   </body>
 </html>

@@ -465,39 +465,6 @@
 
 <body>
 
-  <!-- <script>
-
-
-    let loginForm = document.getElementById("loginForm");
-
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      console.log("hello");
-
-    });
-
-    function makeApiCall() {
-      fetch('http://localhost:7000/api/technova/registration', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataToSend),
-      })
-        .then(response => response.json())
-        .then(data => {
-          document.getElementById('result').innerText = JSON.stringify(data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    }
-  </script> -->
-
-
-
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -807,10 +774,7 @@
       }
 
       addToDataArray(partci1, partci1Phone, true);
-      // addToDataArray(partci2, partci2Phone);
-      // addToDataArray(partci3, partci3Phone);
-      // addToDataArray(partci4, partci4Phone);
-      // addToDataArray(partci5, partci5Phone);
+    
 
 
       const dataToBackend = {

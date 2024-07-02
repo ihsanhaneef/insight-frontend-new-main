@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Countdown Timer</title>
+</head>
+<body>
+    <div class="countdown-card" style="background-color: #000000;margin-top: 1%;">
+        <div class="col">
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-days" style="color: white;">&nbsp;</div>
+                <div class="countdown-label">Days &nbsp;</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-hours" style="color: white;">&nbsp;</div>
+                <div class="countdown-label">Hours &nbsp;&nbsp;</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-minutes" style="color: white;">&nbsp;</div>
+                <div class="countdown-label">Minutes &nbsp;&nbsp;</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-seconds" style="color: white;">&nbsp;</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+
+        <div class="col" style="align-items: center; text-align: center;">
+            <h2 style="color: #ffffff; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; letter-spacing: 1px;">
+                06 | 07 March 2024</h2>
+        </div>
+    </div>
+
+    <script>
+        // Game start and end dates
+        var gameStartDate = new Date("May 15, 2024 00:00:00").getTime();
+        var gameEndDate = new Date("May 16, 2024 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        var x = setInterval(function () {
+            // Get the current date and time
+            var now = new Date().getTime();
+
+            // Calculate the remaining time
+            var timeRemaining = gameEndDate - now;
+
+            // If current date is before the game start date
+            if (now < gameStartDate) {
+                var timeUntilStart = gameStartDate - now;
+                var days = Math.floor(timeUntilStart / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((timeUntilStart % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((timeUntilStart % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeUntilStart % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown-days").innerHTML = days;
+                document.getElementById("countdown-hours").innerHTML = hours;
+                document.getElementById("countdown-minutes").innerHTML = minutes;
+                document.getElementById("countdown-seconds").innerHTML = seconds;
+            } 
+            // If current date is after the game end date
+            else if (now > gameEndDate) {
+                clearInterval(x); // Clear the interval
+                document.getElementById("countdown-days").innerHTML = "Game Ended";
+                document.getElementById("countdown-hours").innerHTML = "0";
+                document.getElementById("countdown-minutes").innerHTML = "0";
+                document.getElementById("countdown-seconds").innerHTML = "0";
+            } 
+            // If current date is during the game
+            else {
+                document.getElementById("countdown-days").innerHTML = "Game Started";
+                document.getElementById("countdown-hours").innerHTML = "0";
+                document.getElementById("countdown-minutes").innerHTML = "0";
+                document.getElementById("countdown-seconds").innerHTML = "0";
+            }
+        }, 1000); // Update every 1 second
+    </script>
+</body>
+</html>
